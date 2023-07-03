@@ -5,7 +5,7 @@ const arrayText = [
 ];
 
 const writeTime = 100; // tempo  escrever e apagar.
-const removeTime = 1000; // tempo para ir para próxima frase no array
+const changeTextTime = 1000; // tempo para ir para próxima frase no array
 
 let indexSentence = 0;
 let indexChar = 0;
@@ -18,7 +18,7 @@ function writeText() {
     indexChar++;
     setTimeout(writeText, writeTime);
   } else {
-    setTimeout(removeText, removeTime);
+    setTimeout(removeText, changeTextTime);
   }
 }
 
@@ -32,7 +32,7 @@ function removeText() {
     if (indexSentence >= arrayText.length) {
       indexSentence = 0;
     }
-    setTimeout(writeText, removeTime);
+    setTimeout(writeText, changeTextTime);
   }
 }
 
